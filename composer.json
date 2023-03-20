@@ -1,5 +1,5 @@
 {
-    "name": "simplesoftwareio/simple-qrcode",
+    "name": "altumcode/simple-qrcode",
     "description": "Simple QrCode is a QR code generator made for Laravel.",
     "keywords": ["qrcode", "laravel", "simple", "generator", "wrapper"],
     "homepage": "https://www.simplesoftware.io/#/docs/simple-qrcode",
@@ -27,9 +27,6 @@
         "psr-4": {
             "SimpleSoftwareIO\\QrCode\\": "src"
         }
-    },
-    "scripts": {
-        "test": "phpunit"
     },
     "extra": {
         "laravel": {
