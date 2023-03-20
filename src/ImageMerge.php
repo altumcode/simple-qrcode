@@ -113,7 +113,7 @@ class ImageMerge
         imagefill($img, 0, 0, $transparent);
         imagealphablending( $img, false );
         imagesavealpha( $img, true );
-        
+
         imagecopy(
             $img,
             $this->sourceImage->getImageResource(),
