@@ -499,23 +499,7 @@ class Generator
      */
     public function getEye(): EyeInterface
     {
-        $isSubclass = is_subclass_of($this->eyeStyle, EyeInterface::class) && is_subclass_of($this->eyeStyle, Singleton::class);
-        if ($isSubclass) {
-            /** @var Singleton $style */
-            $style = $this->eyeStyle;
-
-            return $style::instance();
-        }
-
-        if ($this->eyeStyle === 'square') {
-            return SquareEye::instance();
-        }
-
-        if ($this->eyeStyle === 'circle') {
-            return SimpleCircleEye::instance();
-        }
-
-        return new ModuleEye($this->getModule());
+       return $this->eyeStyle;
     }
 
     /**
