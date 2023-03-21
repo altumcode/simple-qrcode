@@ -336,13 +336,8 @@ class Generator
      *
      * @throws InvalidArgumentException
      */
-    public function eye(string $style): self
+    public function eye($style): self
     {
-        $isSubclass = is_subclass_of($style, EyeInterface::class) && is_subclass_of($style, Singleton::class);
-        if (! in_array($style, ['square', 'circle']) && ! $isSubclass) {
-            throw new InvalidArgumentException("\$style must be square or circle. {$style} is not a valid eye style.");
-        }
-
         $this->eyeStyle = $style;
 
         return $this;
@@ -359,10 +354,6 @@ class Generator
      */
     public function style(string $style, float $size = 0.5): self
     {
-        if (! in_array($style, ['square', 'dot', 'round']) && ! is_subclass_of($style, ModuleInterface::class)) {
-            throw new InvalidArgumentException("\$style must be square, dot, or round. {$style} is not a valid.");
-        }
-
         if ($size < 0 || $size >= 1) {
             throw new InvalidArgumentException("\$size must be between 0 and 1.  {$size} is not valid.");
         }
