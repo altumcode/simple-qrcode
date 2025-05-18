@@ -302,15 +302,15 @@ class Generator
      *
      * @throws InvalidArgumentException
      */
-    public function eyeColor(int $eyeNumber, int $innerRed, int $innerGreen, int $innerBlue, int $outterRed = 0, int $outterGreen = 0, int $outterBlue = 0): self
+    public function eyeColor(int $eyeNumber, int $innerRed, int $innerGreen, int $innerBlue, int $innerAlpha = 100, int $outterRed = 0, int $outterGreen = 0, int $outterBlue = 0, int $outterAlpha = 100): self
     {
         if ($eyeNumber < 0 || $eyeNumber > 2) {
             throw new InvalidArgumentException("\$eyeNumber must be 0, 1, or 2.  {$eyeNumber} is not valid.");
         }
 
         $this->eyeColors[$eyeNumber] = new EyeFill(
-            $this->createColor($innerRed, $innerGreen, $innerBlue),
-            $this->createColor($outterRed, $outterGreen, $outterBlue)
+            $this->createColor($innerRed, $innerGreen, $innerBlue, $innerAlpha),
+            $this->createColor($outterRed, $outterGreen, $outterBlue, $outterAlpha)
         );
 
         return $this;
